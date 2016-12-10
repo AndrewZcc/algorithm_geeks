@@ -9,6 +9,7 @@
 #include "sort/insertion_sort.h"
 #include "sort/selection_sort.h"
 #include "sort/bubble_sort.h"
+#include "sort/merge_sort.h"
 
 using namespace std;
 
@@ -30,7 +31,8 @@ int main() {
     while (flag) {
         int key, pos;
 
-        /* Binary Search Test (implemented in binary_search.h)
+        /*
+        // Binary Search Test (implemented in binary_search.h)
         cout << endl << "+++ Binary Search Test [O(log n)] +++" << endl;
         cout << "Please input the element you want to search: "; cin >> key;
         len = sizeof(arr)/sizeof(arr[0]);
@@ -38,9 +40,8 @@ int main() {
         pos == -1 ?
             cout << "Not Found" << endl :
             cout << "Found: loc = " << pos << endl;
-        */
 
-        /* Insertion Sort Test (implemented in insertion_sort.h) */
+        // Insertion Sort Test (implemented in insertion_sort.h)
         cout << endl << "+++ Insertion Sort Test [O(n^2) | Stable] +++" << endl;
         copy_array(temp_arr, unsorted_arr, len);
         cout << "Before: "; print_array(temp_arr, len);
@@ -48,7 +49,7 @@ int main() {
         cout << "After: "; print_array(temp_arr, len);
         //break;
 
-        /* Insertion Sort Test (implemented in insertion_sort.h) */
+        // Insertion Sort Test (implemented in insertion_sort.h)
         cout << endl << "+++ Selection Sort Test [O(n^2) | Unstable] +++" << endl;
         copy_array(temp_arr, unsorted_arr, len);
         cout << "Before: "; print_array(temp_arr, len);
@@ -56,12 +57,26 @@ int main() {
         cout << "After: "; print_array(temp_arr, len);
         //break;
 
-        /* Bubble Sort Test (implemented in bubble_sort.h) */
+        // Bubble Sort Test (implemented in bubble_sort.h)
         cout << endl << "+++ Bubble Sort Test [O(n^2) | Stable] +++" << endl;
         copy_array(temp_arr, unsorted_arr, len);
         cout << "Before: "; print_array(temp_arr, len);
         bubble_sort(temp_arr, len);  // Stable
         cout << "After: "; print_array(temp_arr, len);
+        */
+
+        // Merge Sort Test (implemented in merge_sort.h)
+        cout << endl << "+++ Merge Sort Test [O(n log(n)) | Stable] +++" << endl;
+        copy_array(temp_arr, unsorted_arr, len);
+        cout << "Before: "; print_array(temp_arr, len);
+        merge_sort(temp_arr, len);  // Stable
+        cout << "After: "; print_array(temp_arr, len);
+        int unsort_array2[] = {18, 35, 10, 4, 23, 12, 16};
+        len = sizeof(unsort_array2)/ sizeof(unsort_array2[0]);
+        cout << "Before: "; print_array(unsort_array2, len);
+        merge_sort(unsort_array2, len);
+        cout << "After: "; print_array(unsort_array2, len);
+
         break;
     }
 
