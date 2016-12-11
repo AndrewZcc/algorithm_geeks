@@ -10,6 +10,8 @@
 #include "sort/selection_sort.h"
 #include "sort/bubble_sort.h"
 #include "sort/merge_sort.h"
+#include "sort/heap_sort.h"
+#include "sort/quick_sort.h"
 
 using namespace std;
 
@@ -63,7 +65,6 @@ int main() {
         cout << "Before: "; print_array(temp_arr, len);
         bubble_sort(temp_arr, len);  // Stable
         cout << "After: "; print_array(temp_arr, len);
-        */
 
         // Merge Sort Test (implemented in merge_sort.h)
         cout << endl << "+++ Merge Sort Test [O(n log(n)) | Stable] +++" << endl;
@@ -76,6 +77,19 @@ int main() {
         cout << "Before: "; print_array(unsort_array2, len);
         merge_sort(unsort_array2, len);
         cout << "After: "; print_array(unsort_array2, len);
+
+        cout << endl << "+++ Heap Sort Test [O(n log(n)) | Unstable/Stable] +++" << endl;
+        copy_array(temp_arr, unsorted_arr, len);
+        cout << "Before: "; print_array(temp_arr, len);
+        heap_sort(temp_arr, len);  // Unstable/Stable
+        cout << "After: "; print_array(temp_arr, len);
+        */
+
+        cout << endl << "+++ Quick Sort Test [Θ(n log(n)) | Unstable] +++" << endl;
+        copy_array(temp_arr, unsorted_arr, len);
+        cout << "Before: "; print_array(temp_arr, len);
+        quick_sort(temp_arr, len);  // Unstable
+        cout << "After: "; print_array(temp_arr, len);
 
         break;
     }
