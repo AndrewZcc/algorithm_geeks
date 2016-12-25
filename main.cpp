@@ -12,6 +12,7 @@
 #include "sort/merge_sort.h"
 #include "sort/heap_sort.h"
 #include "sort/quick_sort.h"
+#include "sort/application/minLength_sort.h"
 
 using namespace std;
 
@@ -83,13 +84,25 @@ int main() {
         cout << "Before: "; print_array(temp_arr, len);
         heap_sort(temp_arr, len);  // Unstable/Stable
         cout << "After: "; print_array(temp_arr, len);
-        */
 
         cout << endl << "+++ Quick Sort Test [Θ(n log(n)) | Unstable] +++" << endl;
         copy_array(temp_arr, unsorted_arr, len);
         cout << "Before: "; print_array(temp_arr, len);
         quick_sort(temp_arr, len);  // Unstable
         cout << "After: "; print_array(temp_arr, len);
+        */
+
+        cout << endl << "+++ Application: Minimal-Length Quick Sort Test [Θ(n log(n))] +++" << endl;
+        copy_array(temp_arr, unsorted_arr, len);
+        cout << "Before: "; print_array(temp_arr, len);
+        minLength_sort(temp_arr, len);
+        cout << "After: "; print_array(temp_arr, len);
+
+         int temp_arr_2[] = {10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60};
+        len = sizeof(temp_arr_2)/ sizeof(temp_arr_2[0]);
+        cout << "Before: "; print_array(temp_arr_2, len);
+        minLength_sort(temp_arr_2, len);
+        cout << "After: "; print_array(temp_arr_2, len);
 
         break;
     }
